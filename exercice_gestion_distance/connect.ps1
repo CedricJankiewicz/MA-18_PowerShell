@@ -13,3 +13,8 @@ Invoke-Command -Session $sess -ScriptBlock {
                    -DestinationPath "C:\Users\Admin\Documents" -Force
 }
 
+# Path to PsExec on your local machine
+$PsExec = "PsExec.exe"
+
+# Launch Desktop Goose GUI on remote PC
+Start-Process -FilePath $PsExec -ArgumentList '\\PCMA18CLIENT -u Admin -p password -i 1 "C:\Users\Admin\Documents\DesktopGoose v0.3\GooseDesktop.exe"'
